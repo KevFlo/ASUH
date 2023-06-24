@@ -1,8 +1,23 @@
 import React from 'react';
 import Script from 'next/Script'
 import Image from 'next/image'
+import { useEffect } from 'react';
 
 export default function Socials() {
+  useEffect(() => {
+    // Load Facebook SDK script
+    const loadFacebookSDK = () => {
+      if (document.getElementById('facebook-jssdk')) return;
+      const script = document.createElement('script');
+      script.id = 'facebook-jssdk';
+      script.src = '//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10';
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(script, firstScriptTag);
+    };
+
+    loadFacebookSDK();
+  }, []);
+
   return (
     <>
       <h1>Keep up with the Astronomy Society by following us on Social Media!</h1>
@@ -35,7 +50,13 @@ export default function Socials() {
                 <Image src="/insta-title.png" alt="" width={250} height={250} />
               </a>
               
+              
               <Script async src="//www.instagram.com/embed.js"></Script>
+              <div className="fb-page" data-href="https://www.facebook.com/AstroSocietyUH/" data-tabs="timeline" data-width="600" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                <blockquote cite="https://www.facebook.com/AstroSocietyUH/" className="fb-xfbml-parse-ignore">
+                  <a href="https://www.facebook.com/AstroSocietyUH/">Astronomy Society at the University of Houston - Main Campus</a>
+                </blockquote>
+              </div>
 
               <a href="Socials/">
                 <Image
@@ -46,6 +67,7 @@ export default function Socials() {
                   height={250}
                 />
               </a>
+
           </div>
         </div>
       </div>
