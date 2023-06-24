@@ -17,7 +17,6 @@ export default function Socials() {
             </main>
           </div>
           <div className="col-sm-4 col-md-3 col-sm-pull-8 col-md-pull-9 sidebar">
-            <small>
               <a
                 className="twitter-timeline"
                 href="https://twitter.com/AstroSocietyUH"
@@ -33,32 +32,23 @@ export default function Socials() {
               ></Script>
 
               <a href="https://www.instagram.com/astrosocietyuh/">
-                <Image src="/content/8-asuh-social-media/insta-title.png" alt="" width={500} height={500} />
+                <Image src="/insta-title.png" alt="" width={250} height={250} />
               </a>
+              
+              <Script async src="//www.instagram.com/embed.js"></Script>
 
-              {/* LightWidget WIDGET */}
-              <Script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></Script>
-              <iframe
-                src="//lightwidget.com/widgets/435b423ec49757cd8b22c4de59ed9c3d.html"
-                scrolling="no"
-                allowtransparency="true"
-                className="lightwidget-widget"
-                style={{ width: '100%', border: 0, overflow: 'hidden' }}
-              ></iframe>
-
-              <a href="asuh-social-media/snapchat">
+              <a href="Socials/">
                 <Image
-                  src="/public/snapcode.png"
+                  src="/snapcode.jpg"
                   alt="Snapcode"
                   className="right"
-                  width={500}
-                  height={500}
+                  width={250}
+                  height={250}
                 />
               </a>
-            </small>
           </div>
         </div>
       </div>
     </>
-  );
+  );S
 }
